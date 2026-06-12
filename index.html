@@ -23,7 +23,7 @@
   --font-h:   'Space Grotesk', sans-serif;
   --font-b:   'Inter', sans-serif;
 }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
   background: var(--bg);
   color: var(--text);
@@ -160,7 +160,7 @@ nav.scrolled {
   to { opacity: 1; transform: translateY(0); }
 }
 .hero-title {
-  font-size: clamp(2.8rem, 6vw, 5.2rem);
+  font-size: clamp(2rem, 6vw, 5.2rem);
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.03em;
@@ -850,6 +850,24 @@ tr:hover td { background: rgba(255,107,43,0.03); }
   .admin-stats { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 640px) {
+  /* ── padding: use 20px minimum on all edges ── */
+  nav { padding: 0 20px; }
+  .mobile-menu { padding: 24px 20px 32px; }
+  #hero { padding: 90px 20px 60px; }
+  .container { padding: 0 20px; }
+  .section-pad { padding: 64px 0; }
+  footer { padding: 48px 20px 24px; }
+  .contact-form { padding: 24px 20px; }
+  .admin-container { padding: 24px 16px; }
+  .login-box { padding: 28px 20px; width: calc(100% - 40px); }
+
+  /* ── typography ── */
+  .hero-title { font-size: clamp(1.8rem, 8vw, 2.4rem); letter-spacing: -0.02em; }
+  .hero-sub { font-size: 0.95rem; max-width: 100%; }
+  .section-title { font-size: clamp(1.4rem, 6vw, 1.8rem); }
+  .section-sub { font-size: 0.95rem; margin-bottom: 36px; }
+
+  /* ── layout ── */
   .nav-links { display: none; }
   .nav-cta.desktop { display: none; }
   .nav-burger { display: flex; }
@@ -857,9 +875,22 @@ tr:hover td { background: rgba(255,107,43,0.03); }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .form-row { grid-template-columns: 1fr; }
   .admin-stats { grid-template-columns: 1fr 1fr; }
-  .hero-stats { gap: 24px; }
-  table { font-size: 0.8rem; }
-  th, td { padding: 10px 12px; }
+
+  /* ── hero ── */
+  .hero-stats { gap: 20px; }
+  .hero-stat-val { font-size: 1.6rem; }
+  .hero-actions { flex-direction: column; }
+  .btn-primary, .btn-outline { width: 100%; justify-content: center; padding: 13px 20px; }
+
+  /* ── cards ── */
+  .product-img { height: 180px; }
+  .product-body { padding: 20px 20px 24px; }
+  .why-card { padding: 20px; }
+  .testi-card { padding: 20px; }
+
+  /* ── admin table ── */
+  table { font-size: 0.78rem; }
+  th, td { padding: 9px 10px; }
 }
 </style>
 </head>
