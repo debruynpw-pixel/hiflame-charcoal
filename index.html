@@ -50,7 +50,7 @@ nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  padding: 0 max(20px, 5%);
+  padding: 0 20px;
   height: 68px;
   display: flex;
   align-items: center;
@@ -109,7 +109,7 @@ nav.scrolled {
   background: rgba(13,13,13,0.97);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
-  padding: 24px max(20px, 5%) 32px;
+  padding: 24px 20px 32px;
   z-index: 99;
   flex-direction: column;
   gap: 20px;
@@ -125,7 +125,7 @@ nav.scrolled {
   min-height: 100dvh;
   display: flex;
   align-items: center;
-  padding: 120px max(20px, 5%) 80px;
+  padding: 100px 20px 60px;
 }
 .hero-inner {
   max-width: 760px;
@@ -275,8 +275,8 @@ nav.scrolled {
 
 /* ─── SECTION BASE ──────────────────────────────────────── */
 section { position: relative; z-index: 1; }
-.container { max-width: 1160px; margin: 0 auto; padding: 0 max(20px, 5%); }
-.section-pad { padding: 100px 0; }
+.container { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+.section-pad { padding: 64px 0; }
 .section-label {
   display: inline-block;
   font-size: 0.72rem;
@@ -576,7 +576,7 @@ section { position: relative; z-index: 1; }
 footer {
   background: var(--bg);
   border-top: 1px solid var(--border);
-  padding: 56px max(20px, 5%) 32px;
+  padding: 48px 20px 24px;
   position: relative; z-index: 1;
 }
 .footer-grid {
@@ -841,6 +841,16 @@ tr:hover td { background: rgba(255,107,43,0.03); }
   padding: 48px 24px;
   color: var(--muted);
   font-size: 0.9rem;
+}
+
+/* ─── DESKTOP PADDING OVERRIDES (mobile-first base = 20px) ── */
+@media (min-width: 641px) {
+  nav { padding: 0 5%; }
+  .mobile-menu { padding: 24px 5% 32px; }
+  #hero { padding: 120px 5% 80px; }
+  .container { padding: 0 5%; }
+  .section-pad { padding: 100px 0; }
+  footer { padding: 56px 5% 32px; }
 }
 
 /* ─── RESPONSIVE ────────────────────────────────────────── */
